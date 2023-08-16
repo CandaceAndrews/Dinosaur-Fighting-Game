@@ -1,1 +1,1 @@
-## Dinosaur fighting game made in Pygame
+## 🦖 Dinosaur fighting game made in Pygame 🦕
