@@ -1,5 +1,5 @@
 import pygame
-from fighter import Fighter
+from Fighter import Fighter
 
 pygame.init()
 
@@ -30,6 +30,10 @@ run = True
 while run:
     # draw background
     draw_bg()
+
+    # draw fighters
+    fighter_1.draw(screen)
+    fighter_2.draw(screen)
 
     # event handler
     for event in pygame.event.get():
