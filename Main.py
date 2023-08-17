@@ -12,11 +12,11 @@ pygame.display.set_caption("Dino Fighter")
 # load background image
 bg_image = pygame.image.load("assets/images/background/bg.jpg").convert_alpha()
 
+
 # function for drawing background
-
-
 def draw_bg():
-    screen.blit(bg_image, (0, 0))
+    scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+    screen.blit(scaled_bg, (0, 0))
 
 
 # game loop
@@ -29,6 +29,9 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
+    # update background
+    pygame.display.update()
 
 # exit game
 pygame.quit()
