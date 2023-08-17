@@ -10,8 +10,18 @@ class Fighter():
         dx = 0
         dy = 0
 
-    # get keypresses
-    key = pygame.key.get_pressed()
+        # get keypresses
+        key = pygame.key.get_pressed()
+
+        # movement
+        if key[pygame.K_a]:
+            dx = -SPEED
+        if key[pygame.K_d]:
+            dx = SPEED
+
+        # update player position
+        self.rect.x += dx
+        self.rect.y += dy
 
     def draw(self, surface):
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
