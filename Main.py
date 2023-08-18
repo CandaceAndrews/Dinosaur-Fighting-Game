@@ -15,7 +15,7 @@ clock = pygame.time.Clock()
 FPS = 60
 
 # load background image
-bg_image = pygame.image.load("assets/images/background/bg.jpg").convert_alpha()
+bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
 
 
 # function for drawing background
