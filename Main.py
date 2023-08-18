@@ -32,12 +32,14 @@ fighter_2 = Fighter(700, 310)
 # game loop
 run = True
 while run:
+
+    clock.tick(FPS)
+
     # draw background
     draw_bg()
 
     # move fighters
-    fighter_1.move()
-    fighter_2.move()
+    fighter_1.move(SCREEN_WIDTH)
 
     # draw fighters
     fighter_1.draw(screen)
