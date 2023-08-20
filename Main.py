@@ -14,6 +14,11 @@ pygame.display.set_caption("Dino Fighter")
 clock = pygame.time.Clock()
 FPS = 60
 
+# define colors
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+
 # load background image
 bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
 
@@ -22,6 +27,11 @@ bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
 def draw_bg():
     scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
     screen.blit(scaled_bg, (0, 0))
+
+
+# function for drawing fighter health bars
+def draw_health_bar(health, x, y):
+    pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
 
 
 # create two instances of fighters
@@ -37,6 +47,9 @@ while run:
 
     # draw background
     draw_bg()
+
+    # show player stats
+    draw_health_bar(fighter_1.heath, 20, 20)
 
     # move fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
