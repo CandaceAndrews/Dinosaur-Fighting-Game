@@ -17,6 +17,7 @@ FPS = 60
 # define colors
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
+GREEN = (21, 163, 108)
 WHITE = (255, 255, 255)
 
 # load background image
@@ -31,7 +32,7 @@ def draw_bg():
 
 # function for drawing fighter health bars
 def draw_health_bar(health, x, y):
-    pygame.draw.rect(screen, YELLOW, (x, y, 400, 30))
+    pygame.draw.rect(screen, GREEN, (x, y, 400, 30))
 
 
 # create two instances of fighters
@@ -49,7 +50,8 @@ while run:
     draw_bg()
 
     # show player stats
-    draw_health_bar(fighter_1.heath, 20, 20)
+    draw_health_bar(fighter_1.health, 20, 20)
+    draw_health_bar(fighter_2.health, 580, 20)
 
     # move fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
