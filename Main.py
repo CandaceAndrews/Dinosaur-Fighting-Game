@@ -21,8 +21,10 @@ GREEN = (21, 163, 108)
 WHITE = (255, 255, 255)
 
 # define fighter variables
-DIABLO_SIZE = 1329
+DIABLO_SIZE = 1330
 DIABLO_DATA = [DIABLO_SIZE]
+SAURON_SIZE = 1330
+SAURON_DATA = [SAURON_SIZE]
 
 # load background image
 bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
@@ -30,6 +32,8 @@ bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
 # load spritesheets
 diablo_sheet = pygame.image.load(
     "assets/images/diablo/sprites/diablo.png").convert_alpha()
+sauron_sheet = pygame.image.load(
+    "assets/images/sauron/sprites/sauron.png").convert_alpha()
 
 # define number of steps in each animation
 DIABLO_ANIMATION_STEPS = [5, 4, 4, 2]
@@ -52,7 +56,7 @@ def draw_health_bar(health, x, y):
 # create two instances of fighters
 fighter_1 = Fighter(200, 310, DIABLO_DATA, diablo_sheet,
                     DIABLO_ANIMATION_STEPS)
-fighter_2 = Fighter(700, 310)
+fighter_2 = Fighter(700, 310,)
 
 
 # game loop
