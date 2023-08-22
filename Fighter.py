@@ -4,8 +4,12 @@ import pygame
 class Fighter():
     def __init__(self, x, y, data, sprite_sheet, animation_steps):
         self.size = data[0]
+        self.image_scale = data[1]
         self.flip = False
         self.animation_list = self.load_images(sprite_sheet, animation_steps)
+        self.action = 0  # 0:idle #1:attack #2:walk #3:jump
+        self.frame_index = 0
+        self.image = self.animation_list[self.action][self.frame_index]
         self.rect = pygame.Rect((x, y, 80, 180))
         self.vel_y = 0
         self.jump = False
@@ -21,7 +25,8 @@ class Fighter():
             for x in range(animation):
                 temp_img = sprite_sheet.subsurface(
                     x * self.size, y * self.size, self.size, self.size)  # width/height
-                temp_img_list.append(temp_img)
+                temp_img_list.append(pygame.transform.scale(
+                    temp_img, (555, 555)))
             animation_list.append(temp_img_list)
         return animation_list
 
@@ -89,3 +94,4 @@ class Fighter():
 
     def draw(self, surface):
         pygame.draw.rect(surface, (255, 0, 0), self.rect)
+        surface.blit(self.image, (self.rect.x, self.rect.y))
