@@ -20,12 +20,19 @@ YELLOW = (255, 255, 0)
 GREEN = (21, 163, 108)
 WHITE = (255, 255, 255)
 
+# define fighter variables
+DIABLO_SIZE = 1329
+DIABLO_DATA = [DIABLO_SIZE]
+
 # load background image
 bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
 
 # load spritesheets
 diablo_sheet = pygame.image.load(
     "assets/images/diablo/sprites/diablo.png").convert_alpha()
+
+# define number of steps in each animation
+DIABLO_ANIMATION_STEPS = [5, 4, 4, 2]
 
 
 # function for drawing background
@@ -43,7 +50,8 @@ def draw_health_bar(health, x, y):
 
 
 # create two instances of fighters
-fighter_1 = Fighter(200, 310)
+fighter_1 = Fighter(200, 310, DIABLO_DATA, diablo_sheet,
+                    DIABLO_ANIMATION_STEPS)
 fighter_2 = Fighter(700, 310)
 
 
