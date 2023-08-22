@@ -23,10 +23,12 @@ WHITE = (255, 255, 255)
 # define fighter variables
 DIABLO_SIZE = 1330
 DIABLO_SCALE = 4
-DIABLO_DATA = [DIABLO_SIZE, DIABLO_SCALE]
+DIABLO_OFFSET = [60, 53]
+DIABLO_DATA = [DIABLO_SIZE, DIABLO_SCALE, DIABLO_OFFSET]
 SAURON_SIZE = 1330
 SAURON_SCALE = 3
-SAURON_DATA = [SAURON_SIZE, SAURON_SCALE]
+SAURON_OFFSET = [83, 70]
+SAURON_DATA = [SAURON_SIZE, SAURON_SCALE, SAURON_OFFSET]
 
 # load background image
 bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
