@@ -23,6 +23,10 @@ WHITE = (255, 255, 255)
 # load background image
 bg_image = pygame.image.load("assets/images/background/bg.png").convert_alpha()
 
+# load spritesheets
+diablo_sheet = pygame.image.load(
+    "assets/images/diablo/sprites/diablo.png").convert_alpha()
+
 
 # function for drawing background
 def draw_bg():
