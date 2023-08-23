@@ -23,7 +23,7 @@ WHITE = (255, 255, 255)
 # define fighter variables
 DIABLO_SIZE = 1330
 DIABLO_SCALE = 4
-DIABLO_OFFSET = [60, 53]
+DIABLO_OFFSET = [78, 53]
 DIABLO_DATA = [DIABLO_SIZE, DIABLO_SCALE, DIABLO_OFFSET]
 SAURON_SIZE = 1330
 SAURON_SCALE = 3
@@ -59,9 +59,9 @@ def draw_health_bar(health, x, y):
 
 
 # create two instances of fighters
-fighter_1 = Fighter(200, 310, DIABLO_DATA, diablo_sheet,
+fighter_1 = Fighter(200, 310, False, DIABLO_DATA, diablo_sheet,
                     DIABLO_ANIMATION_STEPS)
-fighter_2 = Fighter(700, 310, SAURON_DATA, sauron_sheet,
+fighter_2 = Fighter(700, 310, False, SAURON_DATA, sauron_sheet,
                     SAURON_ANIMATION_STEPS)
 
 
@@ -80,6 +80,10 @@ while run:
 
     # move fighters
     fighter_1.move(SCREEN_WIDTH, SCREEN_HEIGHT, screen, fighter_2)
+
+    # update fighters
+    fighter_1.update()
+    fighter_2.update()
 
     # draw fighters
     fighter_1.draw(screen)
