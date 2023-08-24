@@ -93,7 +93,9 @@ class Fighter():
     def update(self):
         # check what action the player is performing
         if self.running == True:
-            self.action = 2
+            self.update_action(2)
+        else:
+            self.update_action(0)
 
         animation_cooldown = 250
         # update image
@@ -114,6 +116,14 @@ class Fighter():
             target.health -= 10
 
         pygame.draw.rect(surface, (0, 255, 0), attacking_rect)
+
+    def update_action(self, new_action):
+        # check if the new action is different to the previous one
+        if new_action != self.action:
+            self.action = new_action
+            # update the animation settings
+            self.frame_index = 0
+            self.update_time = pygame.time.get_ticks()
 
     def draw(self, surface):
         img = pygame.transform.flip(self.image, self.flip, False)
