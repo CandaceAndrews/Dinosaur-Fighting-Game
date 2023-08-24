@@ -40,8 +40,8 @@ sauron_sheet = pygame.image.load(
     "assets/images/sauron/sprites/sauron.png").convert_alpha()
 
 # define number of steps in each animation
-DIABLO_ANIMATION_STEPS = [5, 5, 4, 2]
-SAURON_ANIMATION_STEPS = [5, 5, 4, 2]
+DIABLO_ANIMATION_STEPS = [5, 4, 4, 2]
+SAURON_ANIMATION_STEPS = [5, 4, 4, 2]
 
 
 # function for drawing background

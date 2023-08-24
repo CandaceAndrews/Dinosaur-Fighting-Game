@@ -14,6 +14,7 @@ class Fighter():
         self.update_time = pygame.time.get_ticks()
         self.rect = pygame.Rect((x, y, 80, 180))
         self.vel_y = 0
+        self.running = False
         self.jump = False
         self.attacking = False
         self.attack_type = 0
@@ -37,6 +38,7 @@ class Fighter():
         GRAVITY = 2
         dx = 0
         dy = 0
+        self.running = False
 
         # get keypresses
         key = pygame.key.get_pressed()
@@ -46,8 +48,10 @@ class Fighter():
             # movement
             if key[pygame.K_a]:
                 dx = -SPEED
+                self.running = True
             if key[pygame.K_d]:
                 dx = SPEED
+                self.running = True
             # jump
             if key[pygame.K_w] and self.jump == False:
                 self.vel_y = -30
@@ -87,7 +91,11 @@ class Fighter():
 
     # handle animation updates
     def update(self):
-        animation_cooldown = 500
+        # check what action the player is performing
+        if self.running == True:
+            self.action = 2
+
+        animation_cooldown = 250
         # update image
         self.image = self.animation_list[self.action][self.frame_index]
         # check if enough time has passed since the last update
