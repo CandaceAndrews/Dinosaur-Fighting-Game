@@ -92,7 +92,9 @@ class Fighter():
     # handle animation updates
     def update(self):
         # check what action the player is performing
-        if self.running == True:
+        if self.jump == True:
+            self.update_action(3)
+        elif self.running == True:
             self.update_action(2)
         else:
             self.update_action(0)
