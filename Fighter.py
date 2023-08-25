@@ -106,6 +106,7 @@ class Fighter():
             self.update_action(0)  # 0:idle
 
         animation_cooldown = 230
+
         # update image
         self.image = self.animation_list[self.action][self.frame_index]
         # check if enough time has passed since the last update
@@ -122,7 +123,7 @@ class Fighter():
     def attack(self, surface, target):
         self.attacking = True
         attacking_rect = pygame.Rect(
-            self.rect.centerx - (2 * self.rect.width * self.flip), self.rect.y, 2 * self.rect.width, self.rect.height)
+            self.rect.centerx - (3 * self.rect.width * self.flip), self.rect.y, 3 * self.rect.width, self.rect.height)
         if attacking_rect.colliderect(target.rect):
             target.health -= 10
 
